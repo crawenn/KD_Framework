@@ -57,7 +57,9 @@ namespace KD_Framework.cfg
                         if (Regex.IsMatch(driver.FindElement(By.CssSelector("BODY")).Text, "^[\\s\\S]*$")) break;
                     }
                     catch (Exception)
-                    { }
+                    {
+
+                    }
                     Thread.Sleep(1000);
                 }
 
@@ -66,6 +68,77 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("The baseURL " + Constants.baseURL + " could not be reached.");
+            }
+        }
+
+        public static void click(String obj, String data)
+        {
+            try
+            {
+                driver.FindElement(By.XPath(getKey(obj, ""))).Click();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Element not found: " + obj);
+            }
+        }
+
+        public static string getKey(String obj, String data)
+        {
+            return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
+        }
+
+        public static void input(String obj, String data)
+        {
+            try
+            {
+                IWebElement we = driver.FindElement(By.XPath(getKey(obj, "")));
+                we.Clear();
+                we.SendKeys(data);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void waitFor(String obj, String data)
+        {
+            try
+            {
+                Thread.Sleep(5000);
+            }
+            catch (ThreadInterruptedException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void waitUntil(String obj, String data)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(data)));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        public static void checkCheckBox(String obj, String data)
+        {
+            try
+            {
+                IWebElement chkbx = driver.FindElement(By.XPath(getKey(obj, "")));
+                if (!chkbx.Selected)
+                {
+                    chkbx.Click();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
