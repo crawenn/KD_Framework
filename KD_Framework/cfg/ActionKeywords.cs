@@ -24,17 +24,17 @@ namespace KD_Framework.cfg
         {
             try
             {
-                if (data == $"((M|m)ozill?a)?|((F|f)ire(F|f)ox)?")
+                if (data == @"((M|m)ozill?a)?|((F|f)ire(F|f)ox)?")
                 {
                     driver = new FirefoxDriver();
                     Console.WriteLine("Launching" + data);
                 }
-                else if (data == $"((I|i)nternet)?|((E|e)xplorer)?|IE")
+                else if (data == @"((I|i)nternet)?|((E|e)xplorer)?|IE")
                 {
                     driver = new InternetExplorerDriver();
                     Console.WriteLine("Launching" + data);
                 }
-                else if (data == $"(C|c)hrome")
+                else if (data == @"(C|c)hrome")
                 {
                     driver = new ChromeDriver();
                 }
