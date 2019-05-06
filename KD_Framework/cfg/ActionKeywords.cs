@@ -195,7 +195,7 @@ namespace KD_Framework.cfg
             string screenshot = prntscr.AsBase64EncodedString;
             byte[] screenShotAsByteArreay = prntscr.AsByteArray;
 
-            prntscr.SaveAsFile("selTests_" + DateTime.Today.ToString() + data + obj, ScreenshotImageFormat.Png);
+            prntscr.SaveAsFile("selTests_" + DateTime.Today.ToString("yyyy-MM-dd_HH-mm-ss") + data + obj, ScreenshotImageFormat.Png);
             prntscr.ToString();
         }
     }
