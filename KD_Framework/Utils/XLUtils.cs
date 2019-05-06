@@ -16,8 +16,10 @@ namespace KD_Framework
         {
             try
             {
-                xlApp = new Excel.Application();
-                xlApp.Visible = false;
+                xlApp = new Excel.Application
+                {
+                    Visible = false
+                };
 
                 xlWB = xlApp.Workbooks.Open(Constants.testDataPath);
             }
@@ -34,7 +36,7 @@ namespace KD_Framework
             try
             {
                 xlWS = xlWB.Sheets[sheetName] as Excel.Worksheet;
-                var cellValue = (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
+                string cellValue = (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
                 return cellValue;
             }
             catch (Exception e)
@@ -51,7 +53,9 @@ namespace KD_Framework
             try
             {
                 xlWS = xlWB.Sheets[sheetName] as Excel.Worksheet;
-                number = xlWS.UsedRange.Rows.Count;
+                number = xlWS.Rows.Count;
+
+                return number;
             }
             catch (Exception e)
             {
@@ -59,7 +63,6 @@ namespace KD_Framework
                 ExecutionScript.bResult = false;
                 //Console.WriteLine(execEngine.ExecutionScript.bResult.ToString());
             }
-
             return number;
         }
 
