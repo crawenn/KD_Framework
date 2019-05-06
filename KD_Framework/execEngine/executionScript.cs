@@ -29,7 +29,7 @@ namespace KD_Framework.execEngine
         public static bool bResult;
 
         [TestMethod]
-        public void TestMain()
+        public static void TestMain(TestContext testContext)
         {
             actionKeywords = new ActionKeywords();
 
@@ -41,7 +41,7 @@ namespace KD_Framework.execEngine
             execute_TestCase();
         }
 
-        private void execute_TestCase()
+        private static void execute_TestCase()
         {
             //get total testcase num
             int iTotalTestCases = XLUtils.getRowCount(Constants.Sheet_TestCases);
@@ -107,7 +107,7 @@ namespace KD_Framework.execEngine
         }
 
         [ClassCleanup]
-        public void TestCloseApp()
+        public static void TestCloseApp()
         {
             XLUtils.xlWB.Save();
             XLUtils.xlWB.Close(0);
