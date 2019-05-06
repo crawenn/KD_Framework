@@ -37,7 +37,7 @@ namespace KD_Framework.cfg
         public const int Col_TestStepResult = 7;
 
         //dataEngine xls sheets
-        public const String Sheet_TestSteps = "Test Steps";
-        public const String Sheet_TestCases = "Test Cases";
+        public const string Sheet_TestSteps = "Test Steps";
+        public const string Sheet_TestCases = "Test Cases";
     }
 }

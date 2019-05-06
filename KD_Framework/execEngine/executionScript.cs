@@ -28,8 +28,14 @@ namespace KD_Framework.execEngine
         public static string sData;
         public static bool bResult;
 
+        [ClassInitialize]
+        public static void TestSetup(TestContext testContext)
+        {
+
+        }
+
         [TestMethod]
-        public static void TestMain(TestContext testContext)
+        public void TestMain()
         {
             actionKeywords = new ActionKeywords();
 
@@ -41,7 +47,7 @@ namespace KD_Framework.execEngine
             execute_TestCase();
         }
 
-        private static void execute_TestCase()
+        public void execute_TestCase()
         {
             //get total testcase num
             int iTotalTestCases = XLUtils.getRowCount(Constants.Sheet_TestCases);
@@ -85,7 +91,7 @@ namespace KD_Framework.execEngine
             }            
         }
 
-        private static void execute_Actions()
+        public void execute_Actions()
         {
             string sResult;
 
@@ -112,12 +118,6 @@ namespace KD_Framework.execEngine
             XLUtils.xlWB.Save();
             XLUtils.xlWB.Close(0);
             XLUtils.xlApp.Quit();
-        }
-
-        [ClassInitialize]
-        public void TestSetup()
-        {
-
         }
 
         [TestInitialize]

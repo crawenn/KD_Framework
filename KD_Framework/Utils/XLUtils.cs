@@ -1,6 +1,7 @@
 using System;
 using Excel = Microsoft.Office.Interop.Excel;
 using KD_Framework.cfg;
+using KD_Framework.execEngine;
 
 namespace KD_Framework
 {
@@ -8,7 +9,7 @@ namespace KD_Framework
     {
         public static Excel.Application xlApp;
         public static Excel.Workbook xlWB;
-        public static Excel.Worksheet xlWS;
+        private static Excel.Worksheet xlWS;
 
         //opens the .xls file specified in string testDataPath in Constants.cs
         public static void setXlFile(String xlPath)
@@ -44,20 +45,22 @@ namespace KD_Framework
         }
 
         //get rowCount
-        public static int getRowCount(string sheetName)
+        public static int getRowCount(String sheetName)
         {
-            int i = 0;
+            int number = 0;
             try
             {
                 xlWS = xlWB.Sheets[sheetName] as Excel.Worksheet;
-                i = xlWS.UsedRange.Rows.Count;
+                number = xlWS.UsedRange.Rows.Count;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Class: XLUtils | Method: getRowCount | Exception: " + e.Message);
+                Console.WriteLine("Class: XLUtils | Method: getRowCount | Exception: " + e);
+                ExecutionScript.bResult = false;
+                //Console.WriteLine(execEngine.ExecutionScript.bResult.ToString());
             }
 
-            return i;
+            return number;
         }
 
         //get rowNumber of the test case

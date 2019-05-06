@@ -43,6 +43,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("Failed to open browser " + e.Message + ". Please double check the test data.");
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -69,6 +70,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("The baseURL " + Constants.baseURL + " could not be reached.");
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -81,6 +83,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("Element not found: " + obj);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -102,6 +105,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -114,6 +118,7 @@ namespace KD_Framework.cfg
             catch (ThreadInterruptedException e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -127,6 +132,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
         public static void checkCheckBox(String obj, String data)
@@ -142,6 +148,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -155,6 +162,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -167,6 +175,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
@@ -187,6 +196,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("Browser could not be closed: " + e.Message);
+                execEngine.ExecutionScript.bResult = false;
             }
         }
 
