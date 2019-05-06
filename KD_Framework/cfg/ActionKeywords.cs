@@ -85,7 +85,9 @@ namespace KD_Framework.cfg
 
         public static string getKey(String obj, String data)
         {
-            return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
+            NotImplementedException e = new NotImplementedException();
+            return e.ToString();
+            //return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
         }
 
         public static void input(String obj, String data)
@@ -140,6 +142,37 @@ namespace KD_Framework.cfg
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        public static void select(String obj, String data)
+        {
+            try
+            {
+                SelectElement select = new SelectElement(driver.FindElement(By.XPath(getKey(obj, ""))));
+                select.SelectByText(data);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void submitForm(String obj, String data)
+        {
+            try
+            {
+                driver.FindElements(By.XPath(data))[0].Submit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void confirmOrder(String obj, String data)
+        {
+            NotImplementedException e = new NotImplementedException();
+            Console.WriteLine(e.Message);
         }
     }
 }
