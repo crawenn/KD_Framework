@@ -87,7 +87,7 @@ namespace KD_Framework.cfg
         {
             NotImplementedException e = new NotImplementedException();
             return e.ToString();
-            //return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
+            //return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();            
         }
 
         public static void input(String obj, String data)
@@ -173,6 +173,30 @@ namespace KD_Framework.cfg
         {
             NotImplementedException e = new NotImplementedException();
             Console.WriteLine(e.Message);
+        }
+
+        public static void closeBrowser(String obj, String data)
+        {
+            try
+            {
+                driver.Close();
+                driver.Quit();
+                driver.Dispose();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Browser could not be closed: " + e.Message);
+            }
+        }
+
+        public static void takeSnip(String data, String obj)
+        {
+            Screenshot prntscr = ((ITakesScreenshot)driver).GetScreenshot();
+            string screenshot = prntscr.AsBase64EncodedString;
+            byte[] screenShotAsByteArreay = prntscr.AsByteArray;
+
+            prntscr.SaveAsFile("selTests_" + DateTime.Today.ToString() + data + obj, ScreenshotImageFormat.Png);
+            prntscr.ToString();
         }
     }
 }
