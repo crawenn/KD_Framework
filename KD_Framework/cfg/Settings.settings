@@ -1,6 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KD_Framework.cfg" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tracz</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Jelszo2</Value>
+    </Setting>
+    <Setting Name="usernameSelector" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="Username"]</Value>
+    </Setting>
+    <Setting Name="passwordSelector" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="Password"]</Value>
+    </Setting>
+    <Setting Name="signin_btn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="fade"]/div/div/div/div/div/form/div[3]/button</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

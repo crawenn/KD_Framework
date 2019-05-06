@@ -1,0 +1,6 @@
+; Home Page Objects
+
+; Login Page Objects
+usernameSelector=//*[@id="Username"]
+passwordSelector=//*[@id="Password"]
+signin_btn=//*[@id="fade"]/div/div/div/div/div/form/div[3]/button

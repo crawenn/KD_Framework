@@ -16,6 +16,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KD_Framework.cfg
 {
+    //todo: rework selector ingestion: implement it as String selector
     public class ActionKeywords
     {
         public static IWebDriver driver;
@@ -85,9 +86,9 @@ namespace KD_Framework.cfg
 
         public static string getKey(String obj, String data)
         {
-            NotImplementedException e = new NotImplementedException();
-            return e.ToString();
-            //return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();            
+            //NotImplementedException e = new NotImplementedException();
+            //return e.ToString();
+            return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
         }
 
         public static void input(String obj, String data)

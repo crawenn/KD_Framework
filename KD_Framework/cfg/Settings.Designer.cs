@@ -9,248 +9,77 @@
 //------------------------------------------------------------------------------
 
 namespace KD_Framework.cfg {
-
-
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
             }
         }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a.account_icon")]
-        public string btn_MyAccount
-        {
-            get
-            {
-                return ((string)(this["btn_MyAccount"]));
+        [global::System.Configuration.DefaultSettingValueAttribute("tracz")]
+        public string username {
+            get {
+                return ((string)(this["username"]));
             }
-            set
-            {
-                this["btn_MyAccount"] = value;
+            set {
+                this["username"] = value;
             }
         }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("div#account_logout")]
-        public string btn_LogOut
-        {
-            get
-            {
-                return ((string)(this["btn_LogOut"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input#log")]
-        public string txtbx_UserName
-        {
-            get
-            {
-                return ((string)(this["txtbx_UserName"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input#pwd")]
-        public string txtbx_Password
-        {
-            get
-            {
-                return ((string)(this["txtbx_Password"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input#login")]
-        public string btn_LogIn
-        {
-            get
-            {
-                return ((string)(this["btn_LogIn"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("nav#main-nav>ul>li:nth-child(2)>a")]
-        public string menu_Product
-        {
-            get
-            {
-                return ((string)(this["menu_Product"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a.go_to_checkout")]
-        public string btn_GoToCheckout
-        {
-            get
-            {
-                return ((string)(this["btn_GoToCheckout"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("div.slide1>a")]
-        public string btn_Continue
-        {
-            get
-            {
-                return ((string)(this["btn_Continue"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#current_country")]
-        public string select_Country
-        {
-            get
-            {
-                return ((string)(this["select_Country"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'Email\']")]
-        public string txtbx_Email
-        {
-            get
-            {
-                return ((string)(this["txtbx_Email"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'First Name\']")]
-        public string txtbx_Fname
-        {
-            get
-            {
-                return ((string)(this["txtbx_Fname"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'Last Name\']")]
-        public string txtbx_Lname
-        {
-            get
-            {
-                return ((string)(this["txtbx_Lname"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'Postal Code\']")]
-        public string txtbx_Pcode
-        {
-            get
-            {
-                return ((string)(this["txtbx_Pcode"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'Phone\']")]
-        public string txtbx_Phone
-        {
-            get
-            {
-                return ((string)(this["txtbx_Phone"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input#shippingSameBilling")]
-        public string chkbx_Billing
-        {
-            get
-            {
-                return ((string)(this["chkbx_Billing"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".make_purchase.wpsc_buy_button")]
-        public string btn_Purchase
-        {
-            get
-            {
-                return ((string)(this["btn_Purchase"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string finish
-        {
-            get
-            {
-                return ((string)(this["finish"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("input[placeholder=\'City\']")]
-        public string txtbx_City
-        {
-            get
-            {
-                return ((string)(this["txtbx_City"]));
-            }
-        }
-
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("textarea[placeholder=\'Address\']")]
-        public string txtArea_Addr
-        {
-            get
-            {
-                return ((string)(this["txtArea_Addr"]));
-            }
-        }
-
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Setting
-        {
-            get
-            {
-                return ((string)(this["Setting"]));
+        [global::System.Configuration.DefaultSettingValueAttribute("Jelszo2")]
+        public string password {
+            get {
+                return ((string)(this["password"]));
             }
-            set
-            {
-                this["Setting"] = value;
+            set {
+                this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//*[@id=\"Username\"]")]
+        public string usernameSelector {
+            get {
+                return ((string)(this["usernameSelector"]));
+            }
+            set {
+                this["usernameSelector"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//*[@id=\"Password\"]")]
+        public string passwordSelector {
+            get {
+                return ((string)(this["passwordSelector"]));
+            }
+            set {
+                this["passwordSelector"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("//*[@id=\"fade\"]/div/div/div/div/div/form/div[3]/button")]
+        public string signin_btn {
+            get {
+                return ((string)(this["signin_btn"]));
+            }
+            set {
+                this["signin_btn"] = value;
             }
         }
     }
