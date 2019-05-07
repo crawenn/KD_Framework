@@ -31,13 +31,12 @@ namespace KD_Framework
 
         //reading data from the excel cell
         //parameters are rowNum, colNum and sheetName
-        public static string getCellData(int rowNum, int colNum, String sheetName)
+        public static string getCellData(int rowNum, int colNum, string sheetName)
         {
             try
             {
                 xlWS = xlWB.Sheets[sheetName] as Excel.Worksheet;
-                string cellValue = (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
-                return cellValue;
+                return (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
             }
             catch (Exception e)
             {
@@ -47,7 +46,7 @@ namespace KD_Framework
         }
 
         //get rowCount
-        public static int getRowCount(String sheetName)
+        public static int getRowCount(string sheetName)
         {
             int number = 0;
             try
@@ -61,14 +60,14 @@ namespace KD_Framework
             {
                 Console.WriteLine("Class: XLUtils | Method: getRowCount | Exception: " + e);
                 ExecutionScript.bResult = false;
-                //Console.WriteLine(execEngine.ExecutionScript.bResult.ToString());
+                Console.WriteLine(ExecutionScript.bResult.ToString());
             }
             return number;
         }
 
         //get rowNumber of the test case
         //arguments are testCaseName, colNum, sheetName
-        public static int getRowContains(String testCaseName, int colNum, String sheetName)
+        public static int getRowContains(string testCaseName, int colNum, string sheetName)
         {
             int rowNum = 0;
             try
@@ -95,14 +94,14 @@ namespace KD_Framework
 
         //counting test steps
         //arguments: sheetName, testCaseID, testCaseStart
-        public static int getTestStepsCount(String sheetName, String testCaseID, int testCaseStart)
+        public static int getTestStepsCount(string sheetName, string testCaseID, int testCaseStart)
         {
             int i = 0;
             try
             {
-                for (int j = testCaseStart; j <= XLUtils.getRowCount(sheetName); j++)
+                for (int j = testCaseStart; j <= getRowCount(sheetName); j++)
                 {
-                    if (!testCaseID.Equals(XLUtils.getCellData(i, Constants.Col_TestCaseID, sheetName)))
+                    if (!testCaseID.Equals(value: getCellData(i, Constants.Col_TestCaseID, sheetName)))
                     {
                         i = j;
                     }
@@ -121,12 +120,12 @@ namespace KD_Framework
 
         //writing xl values into cells
         //arguments: result, rowNum, colNum, sheetName
-        public static void setCellData(String result, int rowNum, int colNum, String sheetName)
+        public static void setCellData(string result, int rowNum, int colNum, string sheetName)
         {
             try
             {
                 xlWS = xlWB.Sheets[sheetName] as Excel.Worksheet;
-                string a = (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
+                var a = (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value.ToString();
                 (xlWS.Cells[rowNum + 1, colNum + 1] as Excel.Range).Value = result;
             }
             catch (Exception e)

@@ -34,19 +34,6 @@ namespace KD_Framework.execEngine
             ActionKeywords.openBrowser("", "");
         }
 
-        [TestMethod]
-        public void TestMain()
-        {
-            actionKeywords = new ActionKeywords();
-
-            //path of the xls
-            string sPath = Constants.testDataPath;
-
-            XLUtils.setXlFile(sPath);
-
-            execute_TestCase();
-        }
-
         public void execute_TestCase()
         {
             //get total testcase num
@@ -88,7 +75,20 @@ namespace KD_Framework.execEngine
                         XLUtils.setCellData(Constants.KEYWORD_PASS, iTestCase, Constants.Col_CaseResult, Constants.Sheet_TestCases);
                     }
                 }
-            }            
+            }
+        }
+
+        [TestMethod]
+        public void TestMain()
+        {
+            actionKeywords = new ActionKeywords();
+
+            //path of the xls
+            //string sPath = Constants.testDataPath;
+
+            XLUtils.setXlFile(Constants.testDataPath);
+
+            execute_TestCase();
         }
 
         public void execute_Actions()
@@ -120,16 +120,16 @@ namespace KD_Framework.execEngine
             XLUtils.xlApp.Quit();
         }
 
-        [TestInitialize]
-        public void InitTest()
-        {
+    //    [TestInitialize]
+    //    public void InitTest()
+    //    {
 
-        }
+    //    }
 
-        [TestCleanup]
-        public void CleanupTest()
-        {
+    //    [TestCleanup]
+    //    public void CleanupTest()
+    //    {
 
-        }
+    //    }
     }
 }
