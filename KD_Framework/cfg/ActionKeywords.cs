@@ -98,7 +98,7 @@ namespace KD_Framework.cfg
         {
             //NotImplementedException e = new NotImplementedException();
             //return e.ToString();
-            return cfg.Settings.Default.Properties[obj].DefaultValue.ToString();
+            return Settings.Default.Properties[obj].DefaultValue.ToString();
         }
 
         public static void input(String obj, String data)
