@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Threading;
 using System.Runtime.InteropServices;
 using KD_Framework.cfg;
+using KD_Framework.execEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KD_Framework.cfg
@@ -19,7 +20,7 @@ namespace KD_Framework.cfg
     //todo: rework selector ingestion: implement it as String selector
     public class ActionKeywords
     {
-        public static IWebDriver driver;
+        public static IWebDriver driver;        
 
         public static void openBrowser(String obj, String data)
         {
@@ -27,23 +28,29 @@ namespace KD_Framework.cfg
             {
                 if (data == @"((M|m)ozill?a)?|((F|f)ire(F|f)ox)?")
                 {
-                    driver = new FirefoxDriver();
-                    Console.WriteLine("Launching" + data);
+                    driver = new FirefoxDriver(".");
+                    Console.WriteLine("Launching " + data);
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3000));
                 }
                 else if (data == @"((I|i)nternet)?|((E|e)xplorer)?|IE")
                 {
-                    driver = new InternetExplorerDriver();
-                    Console.WriteLine("Launching" + data);
+                    driver = new InternetExplorerDriver(".");
+                    Console.WriteLine("Launching " + data);
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3000));
                 }
                 else if (data == @"(C|c)hrome")
                 {
-                    driver = new ChromeDriver();
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("start-maximized");
+                    driver = new ChromeDriver(".", chromeOptions);                    
+                    Console.WriteLine("Launching " + data);
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3000));
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Failed to open browser " + e.Message + ". Please double check the test data.");
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;                
             }
         }
 
@@ -70,7 +77,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("The baseURL " + Constants.baseURL + " could not be reached.");
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -83,7 +90,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("Element not found: " + obj);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -105,7 +112,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -118,7 +125,7 @@ namespace KD_Framework.cfg
             catch (ThreadInterruptedException e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -132,7 +139,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
         public static void checkCheckBox(String obj, String data)
@@ -148,7 +155,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -162,7 +169,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -175,7 +182,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 
@@ -196,7 +203,7 @@ namespace KD_Framework.cfg
             catch (Exception e)
             {
                 Console.WriteLine("Browser could not be closed: " + e.Message);
-                execEngine.ExecutionScript.bResult = false;
+                ExecutionScript.bResult = false;
             }
         }
 

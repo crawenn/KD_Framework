@@ -12,7 +12,7 @@ namespace KD_Framework.cfg
         //This is a list of our variables
 
         public static string baseURL;
-        public static string assemblyDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        public static string assemblyDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public static string projectDir = Path.GetDirectoryName(Path.GetDirectoryName(assemblyDir));
         public static string testDataPath = Path.Combine(projectDir, "dataEngine\\Data.xlsx");
 
@@ -29,8 +29,8 @@ namespace KD_Framework.cfg
         public const int Col_RunMode = 2;
 
         //test result keywords
-        public const String KEYWORD_FAIL = "FAIL";
-        public const String KEYWORD_PASS = "PASS";
+        public const string KEYWORD_FAIL = "FAIL";
+        public const string KEYWORD_PASS = "PASS";
 
         //result columns
         public const int Col_CaseResult = 3;

@@ -31,7 +31,7 @@ namespace KD_Framework.execEngine
         [ClassInitialize]
         public static void TestSetup(TestContext testContext)
         {
-
+            ActionKeywords.openBrowser("", "");
         }
 
         [TestMethod]
